@@ -217,8 +217,42 @@ This is a self-study book. It was written for a reader who **may know nothing ab
   - [Chapter 5](#chapter-5)
   - [Chapter 6](#chapter-6)
   - [Chapter 7](#chapter-7)
-  - [Appendix D. Glossary of logic terms (A–Z)](#appendix-d-glossary-of-logic-terms-az)
-  - [Appendix E. Typing symbols and tool syntax: a cheat sheet](#appendix-e-typing-symbols-and-tool-syntax-a-cheat-sheet)
+- **[Appendix D. Glossary of logic terms (A–Z)](#appendix-d-glossary-of-logic-terms-az)**
+  - [A](#a)
+  - [B](#b)
+  - [C](#c)
+  - [D](#d)
+  - [E](#e)
+  - [F](#f)
+  - [G](#g)
+  - [H](#h)
+  - [I](#i)
+  - [K](#k)
+  - [L](#l)
+  - [M](#m)
+  - [N](#n)
+  - [O](#o)
+  - [P](#p)
+  - [Q](#q)
+  - [R](#r)
+  - [S](#s)
+  - [T](#t)
+  - [U](#u)
+  - [V](#v)
+  - [W–Z](#wz)
+- **[Appendix E. Typing symbols and tool syntax: a cheat sheet](#appendix-e-typing-symbols-and-tool-syntax-a-cheat-sheet)**
+  - [E.1 Typing logic symbols](#e1-typing-logic-symbols)
+  - [E.2 LaTeX in practice](#e2-latex-in-practice)
+  - [E.3 One formula in every syntax](#e3-one-formula-in-every-syntax)
+  - [E.4 The connectives in every syntax](#e4-the-connectives-in-every-syntax)
+  - [E.5 Z3 from Python (tested)](#e5-z3-from-python-tested)
+  - [E.6 SMT-LIB (tested)](#e6-smt-lib-tested)
+  - [E.7 DIMACS CNF for SAT solvers](#e7-dimacs-cnf-for-sat-solvers)
+  - [E.8 TPTP and Prover9 files](#e8-tptp-and-prover9-files)
+  - [E.9 Lean 4 cheat sheet](#e9-lean-4-cheat-sheet)
+  - [E.10 Coq / Rocq cheat sheet](#e10-coq--rocq-cheat-sheet)
+  - [E.11 Prolog (Horn clauses in practice)](#e11-prolog-horn-clauses-in-practice)
+  - [E.12 Choosing a tool](#e12-choosing-a-tool)
 
 ---
 
@@ -8323,11 +8357,11 @@ CNF: (¬P ∨ Q ∨ R) ∧ (P ∨ ¬Q ∨ R). DNF: (P ∧ Q) ∨ (¬P ∧ ¬Q) �
 
 ---
 
-## Appendix D. Glossary of logic terms (A–Z)
+# Appendix D. Glossary of logic terms (A–Z)
 
 Short definitions, in plain words, with a pointer to where the idea is developed. Symbols are in Section Z4 and Appendix A.6; tool syntax is in Appendix E. When a term has two common names, both are listed and cross-referenced. "Prop." means propositional logic, "FOL" first-order (predicate) logic.
 
-### A
+## A
 
 **Absurdity** — see *Contradiction* and *Falsum*.
 
@@ -8349,7 +8383,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Axiom schema** — a template that yields infinitely many axioms, one for each way of filling in its metavariables. Induction in Peano arithmetic is a schema. (2.9.7, 6.7.1)
 
-### B
+## B
 
 **Biconditional** — `A ↔ B`: true exactly when `A` and `B` have the same truth value. Read "if and only if" (iff). (1.8.2)
 
@@ -8359,7 +8393,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **BHK interpretation** — Brouwer–Heyting–Kolmogorov: the constructive reading of connectives as operations on proofs ("a proof of `A → B` is a method turning proofs of `A` into proofs of `B`"). (2.9.8)
 
-### C
+## C
 
 **Calculus** — a formal system of rules for manipulating formulas; "sequent calculus", "natural deduction", "tableau calculus". (2.9.1)
 
@@ -8417,7 +8451,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Cut** — a proof step that introduces and then eliminates a lemma; *cut-elimination* (Gentzen) shows it is dispensable in sequent calculus. (2.9.7)
 
-### D
+## D
 
 **Decidable** — there is an algorithm that always halts with the right yes/no answer. Prop. validity is decidable; FOL validity is not (Church–Turing). (6.7.6)
 
@@ -8445,7 +8479,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **DPLL, CDCL** — complete backtracking SAT algorithms based on unit propagation (DPLL) and conflict-driven clause learning (CDCL). (7.9.2)
 
-### E
+## E
 
 **Eigenvariable** — the fresh variable or name in `∀I`/`∃E` (Gentzen's term). See *Fresh name*. (4.7.1)
 
@@ -8465,7 +8499,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Extensionality** — objects are equal when they have the same members/values; for sets, `A = B` iff same elements. (Z3)
 
-### F
+## F
 
 **Factoring** — in resolution, unifying and merging two literals of the same clause. (7.9.5)
 
@@ -8491,7 +8525,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Functional completeness** — a set of connectives able to express every truth function, e.g. `{¬, ∧}`, `{NAND}`. (1.8.8)
 
-### G
+## G
 
 **Gentzen systems** — natural deduction (NJ/NK) and sequent calculi (LJ/LK), both by Gerhard Gentzen (1935). (2.9.7)
 
@@ -8499,7 +8533,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Gödel's theorems** — *Completeness* (1929) and *Incompleteness* (1931; two theorems). (6.7.3, 6.7.7)
 
-### H
+## H
 
 **Herbrand universe/theorem** — the set of ground terms; a set of clauses is unsatisfiable iff some finite set of its ground instances is propositionally unsatisfiable. Basis of automated provers. (7.9.5)
 
@@ -8509,7 +8543,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Hypothetical syllogism** — from `A → B` and `B → C` infer `A → C`. (1.8.9)
 
-### I
+## I
 
 **Identity** — see *Equality*.
 
@@ -8533,11 +8567,11 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Isomorphism** — a bijection between structures preserving all functions and relations. (6.7.5)
 
-### K
+## K
 
 **Kripke semantics** — models for modal and intuitionistic logic: sets of "worlds" with an accessibility relation. (6.7.9)
 
-### L
+## L
 
 **Lemma** — a helper theorem proved on the way to a larger result.
 
@@ -8549,7 +8583,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Löwenheim–Skolem theorems** — a first-order theory with an infinite model has models of every infinite cardinality (upward) and a countable one (downward). (6.7.5)
 
-### M
+## M
 
 **Many-valued logic** — logic with more than two truth values (Łukasiewicz, Kleene, fuzzy). (6.7.9)
 
@@ -8567,7 +8601,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Modus tollens (MT)** — from `A → B` and `¬B` infer `¬A`. (1.8.9)
 
-### N
+## N
 
 **Natural deduction** — proof systems with introduction and elimination rules for every connective, designed to mirror human reasoning. (Ch. 2)
 
@@ -8581,13 +8615,13 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Normal form** — a restricted syntactic shape every formula can be converted to: NNF, CNF, DNF, prenex, Skolem. (1.8.7, 7.9.3)
 
-### O
+## O
 
 **Omega-consistency** — a strengthening of consistency used in Gödel's original first theorem.
 
 **Open formula** — contains free variables; neither true nor false until the variables are assigned. (3.8.5)
 
-### P
+## P
 
 **Paradoxes of material implication** — `B ⊢ A → B` and `¬A ⊢ A → B` are valid though they sound odd in English. (1.8.9)
 
@@ -8611,13 +8645,13 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Propositional logic (sentential logic, Boolean logic)** — the logic of connectives alone. (Ch. 1)
 
-### Q
+## Q
 
 **Quantifier** — `∀` or `∃`; binds a variable. (3.8.6)
 
 **Quantifier scope** — the sub-formula a quantifier governs. (3.8.5, Z5.1.1)
 
-### R
+## R
 
 **RAA (reductio ad absurdum)** — see *Proof by contradiction*.
 
@@ -8629,7 +8663,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Rule of inference** — see *Inference rule*.
 
-### S
+## S
 
 **SAT problem** — decide whether a prop. formula (usually CNF) is satisfiable; NP-complete (Cook–Levin). (7.9.2)
 
@@ -8661,7 +8695,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Syntax** — the study of the *form* of formulas and proofs, apart from meaning. (1.8.3)
 
-### T
+## T
 
 **Tableau (truth tree)** — a refutation method that breaks formulas apart along branches; a closed tableau refutes. (2.9.7)
 
@@ -8683,7 +8717,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Turing machine** — the standard formal model of computation behind decidability results. (6.7.6)
 
-### U
+## U
 
 **Unification** — finding a substitution that makes two terms/atoms identical; the most general such is the *mgu*. (7.9.4)
 
@@ -8695,7 +8729,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Unsatisfiable** — no model/assignment makes it true. (1.8.4)
 
-### V
+## V
 
 **Valid, validity** — *of a formula:* true in every structure (FOL) or assignment (prop.). *Of an argument:* conclusion true whenever premises are. (1.8.4, 1.8.9)
 
@@ -8703,7 +8737,7 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 **Variable** — a placeholder ranging over the domain; either free or bound. (3.8.2)
 
-### W–Z
+## W–Z
 
 **Well-formed formula (wff)** — see *Formula*.
 
@@ -8715,11 +8749,11 @@ Short definitions, in plain words, with a pointer to where the idea is developed
 
 ---
 
-## Appendix E. Typing symbols and tool syntax: a cheat sheet
+# Appendix E. Typing symbols and tool syntax: a cheat sheet
 
 This appendix answers the practical questions: *How do I type `∀`? How do I write the same formula for Prover9, Z3, Lean or LaTeX? What does the input file for a SAT solver look like?* Prover installation is not covered, only what you write once you have one. Where a tool was run while preparing this book (Z3 via Python and SMT-LIB), the snippet is marked **tested**; the others follow the tools' documented syntax and you should expect to adjust minor details for your version.
 
-### E.1 Typing logic symbols
+## E.1 Typing logic symbols
 
 **Method 1: copy and paste.** Every symbol in this book can be pasted from here: `¬ ∧ ∨ → ↔ ⊥ ⊤ ∀ ∃ ⊢ ⊨ ≡ ∈ ∉ ⊆ ∪ ∩ ∅ ≠ ≤ ≥ ⇒ ⇔ □ ◇ ∴ ∎ ℕ ℤ ℚ ℝ λ`.
 
@@ -8768,7 +8802,7 @@ This appendix answers the practical questions: *How do I type `∀`? How do I wr
 
 Subscripts and superscripts: `x₁` is U+2081; type `x\_1` in Lean. In LaTeX write `x_1`, `x^2`.
 
-### E.2 LaTeX in practice
+## E.2 LaTeX in practice
 
 Minimal document with a proof environment:
 
@@ -8797,7 +8831,7 @@ A derivation line: $P \to Q,\; Q \to R \vdash P \to R$.
 
 Notes: `\,` inserts a thin space after a quantifier; `\bigl( … \bigr)` makes brackets taller; `\frac{top}{bottom}` draws an inference-rule bar; `{\to}E` stops LaTeX treating `\to` as a binary relation with spaces. For Fitch boxes, packages such as `fitch` (or `logicproof`) draw the vertical rules.
 
-### E.3 One formula in every syntax
+## E.3 One formula in every syntax
 
 The formula: *for every x, if P(x) holds then there exists y with R(x, y)*.
 
@@ -8816,7 +8850,7 @@ The formula: *for every x, if P(x) holds then there exists y with R(x, y)*.
 | Prolog | not expressible directly (Horn clauses only); a rule such as `q(X) :- p(X).` |
 | Polish notation | `ΠxCPxΣyRxy` (Π = for all, Σ = exists, C = implies) |
 
-### E.4 The connectives in every syntax
+## E.4 The connectives in every syntax
 
 | Meaning | TPTP | Prover9 | SMT-LIB | Z3 Python | Lean 4 | Coq |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -8833,7 +8867,7 @@ The formula: *for every x, if P(x) holds then there exists y with R(x, y)*.
 
 Two warnings: in Prover9, symbols beginning with `u` through `z` are variables by default (the same convention as Chapter 8's starter kit); in TPTP, variables start with an upper-case letter and predicates/functions with lower-case.
 
-### E.5 Z3 from Python (tested)
+## E.5 Z3 from Python (tested)
 
 Install with `pip install z3-solver`. To check whether an argument is valid, assert the premises and the *negated* conclusion, and ask for satisfiability: `unsat` means valid.
 
@@ -8868,7 +8902,7 @@ p, q = Bools('p q')
 prove(Implies(And(Implies(p, q), p), q))     # prints: proved
 ```
 
-### E.6 SMT-LIB (tested)
+## E.6 SMT-LIB (tested)
 
 The same argument as a stand-alone file `argument.smt2`, runnable with any SMT solver (`z3 argument.smt2`, `cvc5 argument.smt2`):
 
@@ -8885,7 +8919,7 @@ The same argument as a stand-alone file `argument.smt2`, runnable with any SMT s
 
 Output: `unsat`. Reading rules: everything is a parenthesised prefix expression `(function arg1 arg2 …)`; `declare-sort`, `declare-fun`, `declare-const` introduce vocabulary; `assert` adds a fact; `check-sat` asks for `sat`, `unsat` or `unknown`; add `(get-model)` after a `sat` answer to see the model. Arithmetic uses sort `Int` or `Real` and operators `+ - * <= <`.
 
-### E.7 DIMACS CNF for SAT solvers
+## E.7 DIMACS CNF for SAT solvers
 
 A SAT solver reads clauses of integers: variable `n` means atom number `n`, `-n` its negation, and `0` ends a clause. The header gives the number of variables and clauses.
 
@@ -8899,7 +8933,7 @@ p cnf 2 3
 
 This is satisfiable (take `P = Q = true`). Add the clause `-1 -2 0` and update the header to `p cnf 2 4` to make it unsatisfiable. Lines starting with `c` are comments. The chapter 8 starter's `dpll` takes the same clauses as lists, e.g. `dpll([[1, 2], [-1, 2], [1, -2]])`.
 
-### E.8 TPTP and Prover9 files
+## E.8 TPTP and Prover9 files
 
 **TPTP** (`.p` file; run with `eprover --auto socrates.p` or `vampire socrates.p`):
 
@@ -8924,7 +8958,7 @@ end_of_list.
 
 To search for a countermodel instead, use **Mace4** on the same input with the goal that you suspect is false. If a clause set is satisfiable, a refutation prover such as these may run forever without answer; that is the semi-decidability of Section 6.7.6, not a bug.
 
-### E.9 Lean 4 cheat sheet
+## E.9 Lean 4 cheat sheet
 
 A first proof, in tactic style (each `·` marks a case; hover in the editor to see the goal):
 
@@ -8967,7 +9001,7 @@ Which tactic does which proof rule?
 | induction on `n : Nat` | `induction n with \| zero => … \| succ k ih => …` | induction |
 | arithmetic and cleanup | `omega`, `simp`, `decide`, `linarith` (Mathlib) | — |
 
-### E.10 Coq / Rocq cheat sheet
+## E.10 Coq / Rocq cheat sheet
 
 ```text
 Theorem hyp_syllogism : forall P Q R : Prop, (P -> Q) -> (Q -> R) -> P -> R.
@@ -8994,7 +9028,7 @@ Qed.
 
 Classical reasoning (excluded middle, RAA) needs `Require Import Classical.` and the lemma `classic`; Coq's default logic is intuitionistic, matching Section 2.9.8.
 
-### E.11 Prolog (Horn clauses in practice)
+## E.11 Prolog (Horn clauses in practice)
 
 ```text
 mortal(X) :- man(X).      % for all X: man(X) implies mortal(X)
@@ -9004,7 +9038,7 @@ man(socrates).
 
 `:-` reads "if", a comma means "and", and each clause ends with a period. Variables start with a capital letter. Prolog proves a goal by *SLD resolution* (Section 7.9.5). It cannot express `∨` in the conclusion or an unrestricted `∃` in the premises, which is why it is not a general first-order prover.
 
-### E.12 Choosing a tool
+## E.12 Choosing a tool
 
 | Your goal | Use |
 | --- | --- |
